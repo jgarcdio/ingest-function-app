@@ -1,11 +1,10 @@
 from typing import Any, Dict
 from pydantic import BaseModel
 
-
 class EnqueueReq(BaseModel):
-    app: str
-
+    owner: str
+    repository: str
+    ref: str
 
 class EnqueueResp(BaseModel):
     status: str
-    payload: Dict[str, Any]

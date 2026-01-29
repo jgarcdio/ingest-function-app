@@ -3,3 +3,4 @@ python-dotenv==1.0.1
 pydantic==2.8.2
 azure-storage-blob==12.22.0
 azure-storage-queue==12.9.0
+PyGithub

@@ -34,8 +34,12 @@ def enqueue_function(req: func.HttpRequest) -> func.HttpResponse:
         )
 
     try:
-        payload = enqueue_app(enqueue_req.app)
-        resp = EnqueueResp(status="queued", payload=payload)
+        enqueue_app(
+            owner=enqueue_req.owner,
+            repository=enqueue_req.repository,
+            ref=enqueue_req.ref,
+        )
+        resp = EnqueueResp(status="queued")
 
         return func.HttpResponse(
             resp.model_dump_json(),
