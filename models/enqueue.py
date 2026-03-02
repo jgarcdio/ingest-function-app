@@ -3,9 +3,8 @@ from pydantic import BaseModel
 
 
 class EnqueueReq(BaseModel):
-    app: str
+    applicationName: str
 
 
 class EnqueueResp(BaseModel):
-    status: str
-    payload: Dict[str, Any]
+    runId: str

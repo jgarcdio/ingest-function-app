@@ -34,8 +34,8 @@ def enqueue_function(req: func.HttpRequest) -> func.HttpResponse:
         )
 
     try:
-        payload = enqueue_app(enqueue_req.app)
-        resp = EnqueueResp(status="queued", payload=payload)
+        payload = enqueue_app(enqueue_req.applicationName)
+        resp = EnqueueResp(runId=payload["runId"])
 
         return func.HttpResponse(
             resp.model_dump_json(),

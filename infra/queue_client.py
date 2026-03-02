@@ -9,6 +9,6 @@ def get_queue_client() -> QueueClient:
         _queue_client = QueueClient.from_connection_string(
             settings.queue_conn,
             settings.queue_name,
-            message_encode_policy=TextBase64EncodePolicy(),
+            message_encode_policy=TextBase64EncodePolicy()
         )
     return _queue_client
