@@ -1,5 +1,5 @@
 from typing import Set
 
-REQUIRED_SUBFOLDERS: Set[str] = {"Copys/", "CTL/", "JOB/", "PGM/", "PRC/"}
+REQUIRED_SUBFOLDERS: Set[str] = {"CTL/", "JOB/", "PRC/"}
 
-DOCS_FOLDER = "docs/"
+DOCS_FOLDER = "docs"
