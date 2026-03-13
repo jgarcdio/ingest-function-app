@@ -41,7 +41,7 @@ def enqueue_message(payload: dict) -> None:
     send_event(payload, partition_key=payload.get("applicationName"))
 
 def enqueue_app(applicationName: str) -> Dict[str, Any]:
-    validate_required_subfolders(applicationName)
+    #validate_required_subfolders(applicationName)
     payload = build_payload(applicationName)
     enqueue_message(payload)
     return payload

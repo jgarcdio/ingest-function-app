@@ -35,10 +35,10 @@ def enqueue_function(req: func.HttpRequest) -> func.HttpResponse:
 
     try:
         payload = enqueue_app(enqueue_req.applicationName)
-        resp = EnqueueResp(runId=payload["runId"])
+        response = EnqueueResp(runId=payload["runId"])
 
         return func.HttpResponse(
-            resp.model_dump_json(),
+            response.model_dump_json(),
             mimetype="application/json",
             status_code=200,
         )

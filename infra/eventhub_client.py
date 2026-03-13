@@ -12,7 +12,7 @@ def get_eventhub_producer() -> EventHubProducerClient:
         if settings.eventhub_name:
             _producer = EventHubProducerClient.from_connection_string(
                 conn_str=settings.eventhub_conn,
-                eventhub_name=settings.eventhub_name,
+                eventhub_name=settings.eventhub_name
             )
         else:
             _producer = EventHubProducerClient.from_connection_string(
